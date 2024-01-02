@@ -42,6 +42,41 @@ function Fetch_and_display_data() {
 }
 
 
+//display data in table
+function Fetch_and_display_table() {
+  fetch("https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40") 
+    .then(function(response){
+      return response.json()
+    })
+  .then(function(datapoints) {
+    let placeholder = document.getElementById("Fetch_retrieved_data_table");
+    let out = "";
+    for (let datapoint of datapoints) {
+      out += `
+        <tr>
+          <td>${datapoint.first_name}</td>
+          <td>${datapoint.last_name}</td>
+          <td>${datapoint.date_of_birth}</td>
+          <td>${datapoint.country_of_birth}</td>
+          <td>${datapoint.height_cm}</td>
+          <td>${datapoint.weight_kg}</td>
+          <td>${datapoint.position_in_field}</td>
+          <td>${datapoint.range_in_block}</td>
+          <td>${datapoint.range_in_attack}</td>
+          <td>${datapoint.curent_club}</td>
+        <tr>
+      `;
+    };
+    placeholder.innerHTML = out
+  })
+}
+
+
+//chart.js function for count of players from particular countries
+//https://www.youtube.com/watch?v=mw5i_QGDomw
+
+function chart_js_method() {
+
 //chart placeholder
 const data2 = {
   labels: ['Country Placeholder'],
@@ -59,16 +94,16 @@ const config = {
       y: {
         beginAtZero: true
       }
+    },
+    plugins: {
+      colors: {
+        forceOverride: true
+      }
     }
   }
 }
 const players_by_country_chart = new Chart(document.getElementById("players_by_country_chart"),config);
 
-
-//chart.js function for count of players from particular countries
-//https://www.youtube.com/watch?v=mw5i_QGDomw
-
-function chart_js_method() {
 //Fetch block
   async function fetch_data() {
     const url = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40"; // full API 100 records
@@ -114,33 +149,36 @@ function chart_js_method() {
   });
 }
 
+
+function chart_js_method2() {
+
 //chart2 placeholder
 const data_pos = {
   labels: ['Position Placeholder'],
   datasets: [{
     label: '#Label Placeholder',
     data: [1],
-    borderWidth: 2
+    borderWidth: 2,
+//    backgroundColor: Object.values(Utils.CHART_COLORS),
     }],
   }
 const config_pos = {
-  type: 'bar',
+  type: 'doughnut',
   data: data_pos,
   options: {
-    scales: {
-      y: {
-        beginAtZero: true
+    plugins: {
+      colors: {
+        forceOverride: true
       }
     }
   }
 }
 const players_by_position_chart = new Chart(document.getElementById("players_by_position_chart"),config_pos);
 
-function chart_js_method2() {
   //Fetch block
     async function fetch_data() {
-  //    const url = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40"; // full API 100 records
-      const url = "https://my.api.mockaroo.com/VolleyballPlayers2.json?key=c097ba40"; //simplified API 10 records less countries
+      const url = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40"; // full API 100 records
+  //    const url = "https://my.api.mockaroo.com/VolleyballPlayers2.json?key=c097ba40"; //simplified API 10 records less countries
       const response = await fetch(url);
       //wait until the request has been completed
       const datapoints = await response.json(); //parsing json for js
@@ -178,6 +216,7 @@ function chart_js_method2() {
       players_by_position_chart.config.data.labels = uniqueposition;
       players_by_position_chart.config.data.datasets[0].data = position_count_array;
       players_by_position_chart.update()
+      console.log(players_by_position_chart.config)
   
     });
   }

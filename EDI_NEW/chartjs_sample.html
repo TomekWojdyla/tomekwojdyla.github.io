@@ -16,14 +16,14 @@
       
       <script>
         const ctx = document.getElementById('myChart');
-      
-        new Chart(ctx, {
+        
+        const config = {
           type: 'bar',
           data: {
             labels: ['Gray', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
               label: '# of Votes',
-              data: [12, 19, 3, 5, 12, 7],
+              data: [12, 19, 8, 5, 12, 7],
               borderWidth: 3
             }]
           },
@@ -34,7 +34,9 @@
               }
             }
           }
-        });
+        }
+
+        new Chart(ctx, config);
       </script>
 </body>
 </html>
