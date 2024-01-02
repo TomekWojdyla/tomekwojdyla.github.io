@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="group_project_style_ak_lm_tw.css">
+
+<html>
+    <head>
+        <title>Group Project</title>
+    </head>
+    <body>         
+        <h1>Group members</h1>
+        <h2>Anna Kornaga</h2>
+            <button id="AK_details_button" onclick = "show_ak_data()" class ="btn btn-primary">Click for more information about Ania</button>
+            <p></p>
+            
+        <h2>Łukasz Malec</h2>
+            <button id="LM_details_button" onclick = "show_lm_data()" class ="btn btn-success"> Group Leader - Click for more information about Łukasz</button>
+            <p></p>
+        
+        <h2>Tomasz Wojdyła</h2>  
+            <div class="row">
+            <div class="column">
+            <div class="container_gp">
+            <img src="TW_foto.jpg" alt="My photo :)" class="image_gp">
+            <div class="middle_gp">
+              <div class = "text_gp" onclick = "show_tw_data()">Click for more info</div>
+            </div>
+        </div>
+        </div>
+        <div class="column2" id ="TW_details">
+            <p></p>
+            <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <div>
+                <p>Album number: 234216</p>
+                <p>Group: ZIISN1-1112</p>
+                <p>Favourite animal: <a href="https://en.wikipedia.org/wiki/Flying_squirrel" target="_blank">Flying Squirrel</a></p>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <h1>Imported data</h1>
+            <h2>Retrieve data with Fetch API</h2>
+            <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-secondary">Click to fetch data and log in console</button> 
+            <p></p>   
+            <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-success">Click to display retrieved data</button>
+            <p></p>
+            <div id="Fetch_retrieved_data"></div>
+        <hr>
+            <h2>Retrieve data with jQuery</h2>
+            <button id="jQuery_console_button" onclick = "jQuery_to_console()" class ="btn btn-secondary">Click to retrieve data and log in console</button> 
+            <p></p>   
+            <button id="jQuery_button" onclick = "jQuery_display_data()" class ="btn btn-success">Click to display retrieved data</button>
+            <p></p>
+        <hr>
+        <h1>Data Visualization</h1>
+            <h2 id="test">Visualization with Chart.js</h2>
+            <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-warning">Show number of top players by Country</button>
+            <div>
+                <canvas id="players_by_country_chart"></canvas>
+            </div>
+            <br>
+            <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-warning">Show number of top players by field position</button>
+            <div>
+                <canvas id="players_by_position_chart"></canvas>
+            </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src = "group_project_script_ak_lm_tw.js"></script>    
+    </body>
+</html>
+

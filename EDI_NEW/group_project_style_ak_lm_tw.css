@@ -1,0 +1,92 @@
+  
+  h1 {
+    color: rgb(0, 0, 255);
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold; 
+  }
+
+  h2 {
+    color: red;
+    font-size: 30px; 
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  body {
+    background-color: rgb(20, 20, 20);
+    width: 1200px;
+    margin: 0 auto;
+    font-family: "Arial";
+    color: white;
+  }
+
+  /*class img with hoover button*/
+  .container_gp {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image_gp {
+    opacity: 1;
+    display: block;
+    width: 200px;
+    float: none;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle_gp {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .container_gp:hover .image_gp {
+    opacity: 0.3;
+  }
+  
+  .container_gp:hover .middle_gp {
+    opacity: 1;
+  }
+  
+  .text_gp {
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-family: "Arial";
+    padding: 20px 20px;
+  }
+
+/*end - class img with hoover button*/
+
+   /* class for columns */
+   .column {
+    float: left;
+    width: 25%;
+    height: 200px;
+  }
+
+  .column2 {
+    float: left;
+    width: 75%;
+    height: 200px;
+    visibility: hidden;
+    background-color: darkslategrey;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   /* END columns */

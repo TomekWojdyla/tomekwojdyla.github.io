@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pink Floyd</title>
+		<meta charset="UTF-8">
+	</head>
+	<body ondblclick = "test4()">
+		<h1 onclick = "test(this)">Another Brick in the Wall</h1>
+		<h3 onclick = "test2()">Pink Floyd</h3>
+		<p onclick = "test3(this)"">We don't need no education<br>
+		We don't need no thought control<br>
+		No dark sarcasm in the classroom<br>
+		Teachers leave them kids alone<br>
+		Hey! Teachers! Leave them kids alone<br>
+		All in all it's just another brick in the wall<br>
+		All in all you're just another brick in the wall</p>
+		
+		<p id ="desc" style="visibility: hidden;">Pink Floyd were an English rock band formed in London.<br>
+		They achieved international acclaim with their progressive<br>
+		and psychedelic music.</p>
+		
+		<script>
+			function test(elem){
+				elem.innerHTML = "Another Brick in the Wall (part 2)"
+				//x = document.getElementsByTagName('h1')
+			}
+
+
+			function test2() {
+				document.getElementById("desc").style.visibility = "visible"
+				}
+			
+			function test3(y) {
+				y.style = 'font-style: italic'
+				}
+
+			function test4() {
+				document.body.style.backgroundColor = "yellow";
+			}
+
+
+			//element.style = "background-color:yellow"
+
+		</script>
+	</body>
+</html>

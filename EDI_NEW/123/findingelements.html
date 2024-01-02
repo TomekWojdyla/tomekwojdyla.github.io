@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Finding elements</title>
+</head>
+
+<body>
+    <h1>Finding elements in DOM</h1>
+    <p id="someTest">Find an element by element id</p>
+    <p class="important">Find elements by class name</p>
+    <p>Find elements by tag name</p>
+
+    <script>
+        // a JavaScript code here ...
+        let h1 = document.getElementsByTagName('h1')
+        let x = document.getElementsById('someTest')
+        let y = document.getElementsByClassName('important')
+        let p = document.getElementsByTagName('p')
+        
+        consol.log("h1 elements")
+        for (i = 0; i<h1.length;i++) {
+            console.log(h1[i])
+        }
+
+        console.log("x elements")
+        for  (i = 0; i<x.length;i++) {
+            console.log(x[i])
+        }
+
+        console.log("y elements")
+        for  (i = 0; i<y.length;i++) {
+            console.log(y[i])
+        }
+
+        consol.log("p elemenets")
+        for (i = 0; i<p.length;i++) {
+            console.log(p[i])
+        }
+
+
+    </script>
+</body>
+
+</html>
